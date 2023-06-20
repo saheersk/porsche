@@ -1,0 +1,1706 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    text-decoration: none !important;
+    outline: none;
+    box-sizing: border-box;
+    font-weight: normal;
+    /* outline: 2px solid red; */
+}
+.wrapper {
+    width: 85.9%;
+    margin: 0 auto;
+}
+:root {
+    --black: rgba(0, 0, 0, 1);
+    --white: rgba(255, 255, 255, 1);
+    --red: #d5001c;
+    --dark-green: #313639;
+}
+@font-face {
+    font-family: porsche;
+    src: url("../font/pag-iconfont.woff");
+    font-weight: 200;
+}
+@font-face {
+    font-family: porsche;
+    src: url("../font/porsche-next-w-la-bold.min.6b20b9525a53943efc0131a2def13eab.woff2");
+    font-weight: 300;
+}
+@font-face {
+    font-family: porsche;
+    src: url("../font/porsche-next-w-la-regular.min.b8f1c203bd2ac5334247025236ba8d86.woff2");
+    font-weight: 400;
+}
+@font-face {
+    font-family: porsche;
+    src: url("../font/porsche-next-w-la-regular.min.bdaf41e62559316d30f99df258039d4e.woff2");
+    font-weight: 500;
+}
+@font-face {
+    font-family: porsche;
+    src: url("../font/porsche-next-w-la-semi-bold.min.c24c2ecdded2c1342dba0f1d561dde72.woff2");
+    font-weight: 600;
+}
+@font-face {
+    font-family: porsche;
+    src: url("../font/porsche-next-w-la-semi-bold.min.b5f6fca7225aa73578f65320bcf79b45.woff2");
+    font-weight: 700;
+}
+
+body {
+    font-family: porsche, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+        "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* header-section-style */
+header {
+    background-color: var(--white);
+    height: 82px;
+    display: flex;
+    align-items: center;
+}
+header div.header-container {
+    display: flex;
+    align-items: center;
+}
+header div.header-container div.hamburger-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+header div.header-container div.hamburger-container::before {
+    content: " ";
+    width: 76px;
+    height: 28px;
+    background-color: rgba(148, 149, 152, 0.18);
+    position: absolute;
+    left: -2px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    opacity: 0;
+}
+header div.header-container div.hamburger-container:hover::before {
+    display: block;
+    opacity: 1;
+}
+header div.header-container div.hamburger-img {
+    width: 24px;
+    height: 24px;
+}
+header div.header-container div.hamburger-img img {
+    width: 100%;
+    display: block;
+    position: relative;
+}
+header div.header-container span {
+    margin-left: 4px;
+}
+header div.header-container div.porsche-text {
+    width: 211px;
+    height: 14px;
+    position: relative;
+    left: 36.2%;
+}
+header div.header-container div.porsche-text img {
+    width: 100%;
+    display: block;
+}
+header div.header-container div.porsche-text img.logo {
+    display: none;
+}
+/* menu-section-style  */
+
+section#menu-container div.menu-nav {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    z-index: 99;
+    display: flex;
+    left: -100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.8s ease;
+}
+section#menu-container div.menu-active {
+    width: 100%;
+    max-height: 100vh;
+    position: fixed;
+    top: 0px;
+    z-index: 99;
+    display: flex;
+    left: 0%;
+    opacity: 1;
+    visibility: visible;
+    transition: left 0.8s ease;
+}
+section#menu-container div.close-container div.menu-bg-color{
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+    transition: .8s ease-in-out;
+    /* right: 100%; */
+}
+section#menu-container div.close-container div.menu-bg-color-active {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    /* right: 0%; */
+    backdrop-filter: blur(32px);
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 9;
+    opacity: 1;
+    transition: .8s ease-in-out;
+
+}
+section#menu-container div.menu-nav div.left {
+    padding: 95px 0px 0px;
+    height: 100vh;
+    width: 405px;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+}
+section#menu-container div.menu-nav div.left div.arrow {
+    display: none;
+}
+section#menu-container div.menu-nav div.left ul {
+    width: 309px;
+}
+section#menu-container div.menu-nav div.left ul li {
+    margin-bottom: 20px;
+    
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+section#menu-container div.menu-nav div.left ul li a {
+    font-size: 22px;
+    height: 52px;
+    padding: 10px;
+    color: var(--black);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 4px;
+}
+section#menu-container div.menu-nav div.left ul li a.active {
+    background-color: rgba(148, 149, 152, 0.18);
+}
+section#menu-container div.menu-nav div.left ul li.active:hover {
+    background-color: rgba(148, 149, 152, 0.38);
+}
+section#menu-container div.menu-nav div.left ul li a i {
+    content: " ";
+    height: 12px;
+    width: 12px;
+    border: solid var(--black);
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    position: relative;
+    top: 10px;
+    right: 10px;
+    transition: 0.3s ease;
+}
+section#menu-container div.menu-nav div.right {
+    display: none;
+    position: relative;
+    left: 100%;
+    transition: .4s ease;
+}
+section#menu-container div.menu-nav div.right-active {
+    display: block;
+    width: 405px;
+    background-color: #eeeff2;
+    padding: 68px 0px 0px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+    position: relative;
+    left: 0%;
+    transition: .4s ease;
+}
+section#menu-container div.menu-nav-active div.right ul {
+    position: relative;
+    right: -100%;
+    transition: .4s ease;
+}
+section#menu-container div.menu-nav-active div.right-active ul {
+    position: relative;
+    right:  0%;
+    transition: .4s ease;
+}
+section#menu-container div.menu-nav div.right-text ul {
+    margin-top: 30px;
+}
+section#menu-container div.menu-nav div.right-text ul li {
+    font-size: 20px;
+    height: 50px;
+}
+section#menu-container div.menu-nav div.right ul li a div.img-container {
+    width: 196px;
+    height: 101px;
+}
+section#menu-container div.menu-nav div.right ul li a div.img-container img {
+    width: 100%;
+    display: block;
+}
+section#menu-container div.menu-nav div.right div.arrow {
+    display: none;
+}
+section#menu-container div.menu-nav div.close {
+    position: relative;
+}
+section#menu-container div.menu-nav div.close {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--white);
+    position: relative;
+    top: 10px;
+    left: 30px;
+    border-radius: 4px;
+} 
+section#menu-container div.menu-nav div.close img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1);
+}
+/* menu-section-style-ended */
+/* header-section-style-ended */
+
+/* spotlight-section-style */
+section#spotlight {
+    position: relative;
+}
+section#spotlight div.prev-arrow {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    z-index: 999;
+    position: absolute;
+    top: 280px;
+    left: 10px;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+section#spotlight div.prev-arrow i {
+    height: 12px;
+    width: 12px;
+    border: solid var(--black);
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    transform: rotate(140deg);
+    transition: 0.3s ease;
+    z-index: 999;
+    opacity: 0;
+}
+section#spotlight div.prev-arrow:hover {
+    background-color: var(--red);
+}
+section#spotlight div.prev-arrow:hover i {
+    height: 12px;
+    width: 12px;
+    border: solid var(--white);
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    transform: rotate(140deg);
+    transition: 0.3s ease;
+    z-index: 999;
+    opacity: 0;
+}
+section#spotlight div.next-arrow:hover {
+    background-color: var(--red);
+}
+section#spotlight div.next-arrow:hover i {
+    height: 12px;
+    width: 12px;
+    border: solid var(--white);
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    transform: rotate(-45deg);
+    transition: 0.3s ease;
+    z-index: 999;
+    opacity: 0;
+}
+section#spotlight div.next-arrow {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    z-index: 999;
+    position: absolute;
+    top: 280px;
+    right: 10px;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+section#spotlight div.next-arrow i {
+    height: 12px;
+    width: 12px;
+    border: solid var(--black);
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    transform: rotate(-45deg);
+    opacity: 0;
+    transition: 0.3s ease;
+    z-index: 999;
+}
+section#spotlight div.slider-container {
+}
+section#spotlight:hover div.prev-arrow,
+section#spotlight:hover div.prev-arrow i {
+    opacity: 1;
+}
+section#spotlight:hover div.next-arrow,
+section#spotlight:hover div.next-arrow i {
+    opacity: 1;
+}
+section#spotlight div.slider-container div.slider-item {
+    position: relative;
+}
+section#spotlight div.slider-container div.slider-item div.img-container {
+    width: 1440px;
+    height: 553px;
+}
+section#spotlight div.slider-container div.slider-item div.img-container img {
+    width: 100%;
+    display: block;
+}
+section#spotlight div.slider-container div.text-content {
+    position: absolute;
+    bottom: 45px;
+    left: 78px;
+    display: flex;
+    align-items: flex-start;
+}
+section#spotlight div.slider-container div.text-content div.arrow {
+    width: 24px;
+    margin-top: 20px;
+    margin-right: 0px;
+}
+section#spotlight div.slider-container div.text-content div.arrow img {
+    width: 100%;
+    display: block;
+}
+section#spotlight div.slider-container div.text-content h4 {
+    font-size: 46px;
+    color: var(--white);
+    font-weight: 700;
+    line-height: 54px;
+    transition: 0.3s ease;
+}
+section#spotlight div.slider-container div.text-content span {
+    font-size: 26px;
+    color: var(--white);
+    font-weight: 600;
+    line-height: 34px;
+    transition: 0.3s ease;
+}
+section#spotlight div.slider-container div.text-content:hover h4,
+section#spotlight div.slider-container div.text-content:hover span {
+    color: var(--red);
+}
+section#spotlight div.slider-container .slick-dots {
+    position: absolute;
+    bottom: 8px;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section#spotlight div.slider-container .slick-dots button {
+    display: block;
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 100%;
+    background: #c8cacb;
+    text-indent: -9999px;
+}
+section#spotlight div.slider-container .slick-dots li.slick-active button {
+    background-color: var(--red);
+}
+/* spotlight-section-style-ended */
+
+/* models-section-style */
+section#models-container {
+    padding: 25px 0px;
+}
+section#models-container h4 {
+    font-size: 38px;
+    font-weight: 600;
+    width: 86%;
+    margin: 0 auto 18px;
+}
+section#models-container p {
+    font-size: 14px;
+    margin: 16px auto;
+    width: 86%;
+    font-weight: normal;
+}
+section#models-container div.models {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+section#models-container div.models div.item {
+    width: 33.333%;
+    position: relative;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(25, 31, 34, 0.3), rgba(25, 31, 34, 0));
+}
+section#models-container div.models div.item div.img-container img {
+    width: 100%;
+    display: block;
+}
+section#models-container div.models div.item div.text-container {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    font-weight: 34px;
+}
+section#models-container div.models div.item div.text-container h6 {
+    color: var(--white);
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 40px;
+}
+section#models-container div.models div.item div.text-container span {
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 600;
+}
+section#models-container div.models div.item div.button-conatiner {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+}
+section#models-container div.models div.item div.button-conatiner a {
+    padding: 13px 21px;
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    margin-right: 10px;
+    transition: 0.3s ease;
+}
+section#models-container div.models div.item div.button-conatiner a span {
+    font-size: 16px;
+    color: var(--black);
+    margin-left: 8px;
+}
+section#models-container div.models div.item div.button-conatiner a span.color {
+    color: var(--white);
+    transition: 0.3s ease;
+}
+section#models-container div.models div.item div.button-conatiner a.bg-color {
+    background-color: transparent;
+    border: 1px solid var(--white);
+    margin-right: 0px;
+    padding: 11px 21px;
+    transition: 0.3s ease;
+}
+section#models-container div.models div.item div.button-conatiner a div.expand-arrow {
+    width: 12px;
+    height: 12px;
+}
+section#models-container div.models div.item div.button-conatiner a div.expand-arrow img {
+    width: 100%;
+    display: block;
+}
+
+section#models-container div.models div.item div.button-conatiner a.bg-color span::before {
+    content: "";
+    height: 7px;
+    width: 7px;
+    border: solid var(--white);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    position: relative;
+    top: -1px;
+    left: -10px;
+    transition: 0.3s ease;
+}
+section#models-container div.models div.item div.button-conatiner a.fill:hover {
+    background-color: var(--red);
+    color: var(--white);
+}
+section#models-container div.models div.item div.button-conatiner a.fill:hover span {
+    color: var(--white);
+}
+section#models-container div.models div.item div.button-conatiner a.fill:hover div.expand-arrow img {
+    filter: invert(1);
+}
+section#models-container div.models div.item div.button-conatiner a.bg-color:hover span::before {
+    content: "";
+    height: 7px;
+    width: 7px;
+    border: solid var(--red);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    position: relative;
+    top: -1px;
+    left: -10px;
+}
+section#models-container div.models div.item div.button-conatiner a.bg-color:hover span.color {
+    color: var(--red);
+}
+section#models-container div.models div.item div.button-conatiner a.bg-color:hover {
+    border: 1px solid var(--red);
+}
+section#models-container div.models div.item div.heading-res {
+    display: none;
+}
+/* models-section-style-ended */
+
+/* near-you-section-style */
+section#near-you {
+    padding: 0px 0px 30px;
+    position: relative;
+}
+section#near-you div.prev-arrow-near {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    z-index: 999;
+    position: absolute;
+    top: 220px;
+    left: 10px;
+    opacity: 1;
+    transition: 0.3s ease;
+    box-shadow: 0 0 0.4375rem rgba(0, 0, 0, 0.15);
+}
+section#near-you div.prev-arrow-near i {
+    height: 12px;
+    width: 12px;
+    border: solid var(--black);
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    transform: rotate(140deg);
+    transition: 0.3s ease;
+    z-index: 999;
+    opacity: 1;
+}
+section#near-you div.prev-arrow-near:hover {
+    background-color: var(--red);
+}
+section#near-you div.prev-arrow-near:hover i {
+    height: 12px;
+    width: 12px;
+    border: solid var(--white);
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    transform: rotate(140deg);
+    transition: 0.3s ease;
+    z-index: 999;
+    opacity: 1;
+}
+section#near-you div.next-arrow-near {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    z-index: 999;
+    position: absolute;
+    top: 220px;
+    right: 10px;
+    opacity: 1;
+    transition: 0.3s ease;
+    box-shadow: 0 0 0.4375rem rgba(0, 0, 0, 0.15);
+}
+section#near-you div.next-arrow-near i {
+    height: 12px;
+    width: 12px;
+    border: solid var(--black);
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    transform: rotate(-45deg);
+    opacity: 1;
+    transition: 0.3s ease;
+    z-index: 999;
+}
+section#near-you div.next-arrow-near:hover {
+    background-color: var(--red);
+}
+section#near-you div.next-arrow-near:hover i {
+    height: 12px;
+    width: 12px;
+    border: solid var(--white);
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    transform: rotate(-45deg);
+    transition: 0.3s ease;
+    z-index: 999;
+    opacity: 1;
+}
+section#near-you h4 {
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 22px;
+}
+section#near-you div.products div.product {
+    margin-bottom: 40px;
+}
+section#near-you div.products div.product div.car-img img {
+    width: 100%;
+    display: block;
+}
+section#near-you div.products div.product div.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section#near-you div.products div.product div.button-container a {
+    padding: 13px 21px;
+    background-color: #313639;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transition: 0.3s ease;
+}
+section#near-you div.products div.product div.button-container a div.arrow-container {
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+}
+section#near-you div.products div.product div.button-container a div.arrow-container img {
+    width: 100%;
+    display: block;
+}
+section#near-you div.products div.product div.button-container a span {
+    font-size: 16px;
+}
+section#near-you div.products div.product div.button-container a:hover {
+    background-color: var(--red);
+}
+section#near-you div.products .slick-dots {
+    /* position: absolute; */
+    /* bottom: 8px; */
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding-top: 40px; */
+}
+section#near-you div.products .slick-dots button {
+    width: 8px;
+    height: 8px;
+    display: block;
+    border: none;
+    border-radius: 100%;
+    background: #c8cacb;
+    text-indent: -9999px;
+}
+section#near-you div.products .slick-dots li {
+    margin-left: 0px;
+}
+section#near-you div.products .slick-dots li.slick-active button {
+    background-color: var(--red);
+}
+section#near-you div.slick-disabled {
+    opacity: 1;
+}
+/* near-you-section-style-ended */
+
+/* shopping-tools-style  */
+section#tools {
+    padding: 30px 0px 40px;
+}
+section#tools h4 {
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    margin-top: 22px;
+}
+section#tools div.tools-container {
+    display: grid;
+    /* grid-template-columns: 493px repeat(3, 246px);
+    grid-template-rows: 278px; */
+    grid-template-columns: 2fr repeat(3, 1fr);
+    /* grid-template-rows: 278px; */
+}
+section#tools div.tools-container div.item {
+    position: relative;
+}
+section#tools div.tools-container div.item div.cover-img {
+    height: 278px;
+}
+section#tools div.tools-container div.item div.cover-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+section#tools div.tools-container div.item div.text-content {
+    position: absolute;
+    bottom: 22px;
+    left: 15px;
+}
+section#tools div.tools-container div.item div.text-content a {
+    display: flex;
+    align-items: center;
+}
+section#tools div.tools-container div.item div.text-content a div.arrow {
+    width: 16px;
+}
+section#tools div.tools-container div.item div.text-content a div.arrow img {
+    width: 100%;
+    display: block;
+}
+section#tools div.tools-container div.item div.text-content a span {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--white);
+}
+section#tools div.tools-container div.item:hover div.text-content a span {
+    color: var(--red);
+}
+
+/* shopping-tools-style-ended */
+
+/* porsche-social-style  */
+section#social {
+    padding: 30px 0 40px;
+}
+section#social h4 {
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    margin-top: 22px;
+}
+section#social div.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+section#social div.button-container a {
+    padding: 13px 21px;
+    background-color: #313639;
+    display: flex;
+    align-items: center;
+    width: 135px;
+    margin-top: 20px;
+    transition: 0.3s ease;
+}
+section#social div.button-container a:hover {
+    background-color: var(--red);
+}
+section#social div.button-container a div.arrow {
+    width: 10px;
+    margin-right: 4px;
+}
+section#social div.button-container a div.arrow img {
+    width: 100%;
+    display: block;
+}
+section#social a span {
+    color: var(--white);
+}
+section#social div.social-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 8px;
+    z-index: -1;
+}
+section#social div.social-container div.item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-rows: repeat(3, 185px); */
+    /* height: 500px; */
+    gap: 8px;
+}
+section#social div.social-container div.item div.cover-img {
+    grid-area: 1 / 1 / 3 / 3;
+    position: relative;
+}
+section#social div.social-container div.item div.cover-img div.black {
+    width: 100%;
+    height: 378px;
+    /* z-index: 99; */
+    position: absolute;
+    background-color: #000;
+    opacity: 0.5;
+    transition: bottom 0.3s ease;
+    visibility: hidden;
+}
+section#social div.social-container div.item div.rev {
+    grid-area: 2 / 1 / 3 / 3;
+    position: relative;
+}
+section#social div.social-container div.item div.cover-img div.text {
+    position: absolute;
+    bottom: -15px;
+    left: 17px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+section#social div.social-container div.item div.cover-img div#text-rev {
+    position: absolute;
+    bottom: -15px;
+    left: 17px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+section#social div.social-container div.item div.cover-img div.text h6 {
+    font-size: 16px;
+    color: var(--white);
+    font-weight: 400;
+    line-height: 1.5;
+}
+section#social div.social-container div.item div.cover-img div.text div.profile {
+    display: flex;
+    align-items: center;
+}
+section#social div.social-container div.item div.cover-img div.text div.profile img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    /* opacity: 0; */
+}
+section#social div.social-container div.item div.cover-img div.text div.profile small {
+    font-size: 16px;
+    display: block;
+    margin-left: 10px;
+    color: var(--white);
+}
+section#social div.social-container div.item div.active div.black {
+    width: 100%;
+    /* height: 378px; */
+    /* z-index: 99; */
+    position: absolute;
+    background-color: #000;
+    opacity: 0.5;
+    visibility: visible;
+}
+section#social div.social-container div.item div.active div.text {
+    position: absolute;
+    bottom: 15px;
+    left: 17px;
+    visibility: visible;
+    opacity: 1;
+}
+section#social div.social-container div.item div.active div#text-rev {
+    position: absolute;
+    bottom: 15px;
+    left: 17px;
+    visibility: visible;
+    opacity: 1;
+}
+section#social div.social-container div.item div.cover-img div.social,
+section#social div.social-container div.item div.left-img div.social,
+section#social div.social-container div.item div.right-img div.social {
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    padding: 14px 15px;
+    background: #323639;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+section#social div.social-container div.item div.rev div.social-r {
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    padding: 14px 15px;
+    background: #323639;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+section#social div.social-container div.item div.cover-img div.social img,
+section#social div.social-container div.item div.rev div.social-r img,
+section#social div.social-container div.item div.left-img div.social img,
+section#social div.social-container div.item div.right-img img.invert {
+    width: 18px;
+    filter: invert(1);
+}
+section#social div.social-container div.item div.cover-img img,
+section#social div.social-container div.item div.rev img {
+    width: 100%;
+    display: block;
+}
+section#social div.social-container div.item div.left-img {
+    position: relative;
+}
+section#social div.social-container div.item div.left-img img {
+    width: 100%;
+    display: block;
+}
+section#social div.social-container div.item div.left-img div.black {
+    width: 100%;
+    /* height: 185px; */
+    /* z-index: 99; */
+    position: absolute;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+section#social div.social-container div.item div.left-img div.text {
+    position: absolute;
+    top: 15px;
+    left: 17px;
+    visibility: hidden;
+    transition: 0.5s ease;
+    opacity: 0;
+}
+section#social div.social-container div.item div.left-active div.black {
+    width: 100%;
+    height: 185px;
+    /* z-index: 99; */
+    position: absolute;
+    background-color: #000;
+    opacity: 0.5;
+    visibility: visible;
+}
+section#social div.social-container div.item div.left-active div.text {
+    position: absolute;
+    top: 15px;
+    left: 17px;
+    visibility: visible;
+    opacity: 1;
+}
+section#social div.social-container div.item div.left-img div.text h6 {
+    font-size: 16px;
+    color: var(--white);
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+section#social div.social-container div.item div.left-img div.text div.profile {
+    display: flex;
+    align-items: center;
+}
+
+section#social div.social-container div.item div.left-img div.text div.profile small {
+    font-size: 16px;
+    display: block;
+    margin-left: 0px;
+    color: var(--white);
+    font-weight: 200;
+}
+section#social div.social-container div.item div.right-img {
+    position: relative;
+    /* height: 185px; */
+}
+section#social div.social-container div.item div.right-img div.black {
+    width: 100%;
+    height: 185px;
+    /* z-index: 99; */
+    position: absolute;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+section#social div.social-container div.item div.right-img img {
+    width: 100%;
+    display: block;
+}
+section#social div.social-container div.item div.right-img video {
+    width: 100%;
+    height: 100%;
+    grid-area: 3 / 2 / 4 / 3;
+    display: block;
+    object-fit: cover;
+}
+section#social div.social-container div.item div.right-img div.text {
+    position: absolute;
+    top: 15px;
+    left: 17px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+section#social div.social-container div.item div.right-active div.black {
+    opacity: 1;
+    visibility: visible;
+}
+section#social div.social-container div.item div.right-active div.text {
+    visibility: visible;
+    opacity: 1;
+}
+section#social div.social-container div.item div.right-img div.text h6 {
+    font-size: 16px;
+    color: var(--white);
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+section#social div.social-container div.item div.right-img div.text div.profile {
+    display: flex;
+    align-items: center;
+}
+
+section#social div.social-container div.item div.right-img div.text div.profile small {
+    font-size: 16px;
+    display: block;
+    margin-left: 0px;
+    color: var(--white);
+    font-weight: 200;
+}
+/* porsche-social-style-ended */
+
+/* porsche-discover-style  */
+/* section#discover {
+    padding: 30px 0 40px;
+} */
+section#discover h4 {
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    margin-top: 22px;
+}
+/* section#discover div.discover-container { */
+    /* display: grid;
+    grid-template-columns: repeat(4, 1fr); */
+    /* grid-template-rows: 231px; */
+    /* width: 100%; */
+/* } */
+section#discover div.discover-container div.item {
+    position: relative;
+}
+section#discover div.discover-container div.item div.img-container {
+    transition: 0.3s ease;
+}
+section#discover div.discover-container div.item div.img-container img {
+    width: 100%;
+    display: block;
+    z-index: 9;
+}
+section#discover div.discover-container div.item div.img-container::after {
+    content: "";
+    height: 10px;
+    width: 100%;
+    border-bottom: 3px solid red;
+    position: relative;
+    bottom: 18px;
+    opacity: 0;
+    transition: 0.3s ease;
+    z-index: 99999;
+    display: inline-block;
+}
+section#discover div.discover-container div.item:hover div.img-container::after {
+    opacity: 1;
+}
+section#discover div.discover-container div.item div.button-container a {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+section#discover div.discover-container div.item div.button-container a div.arrow {
+    width: 16px;
+    margin-right: 4px;
+}
+section#discover div.discover-container div.item div.button-container a div.arrow img {
+    width: 100%;
+    display: block;
+}
+section#discover div.discover-container div.item div.button-container a span {
+    font-size: 16px;
+    color: var(--black);
+    transition: 0.3s ease;
+}
+section#discover div.discover-container div.item:hover div.button-container a span {
+    color: var(--red);
+}
+/* porsche-disocer-style-ender */
+
+/* footer-section-style  */
+footer {
+    padding: 35px 0px 0px;
+}
+footer div.top-line {
+    border-top: 1px solid #c8cacb;
+    margin: 10px 0 0;
+}
+footer div.top nav {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    gap: 2px;
+}
+footer nav {
+    /* padding: 40px; */
+}
+footer  nav h6 {
+    padding: 12px 0px 0px;
+    font-size: 20px;
+    font-weight: 700;
+}
+footer  nav ul li {
+    margin: 25px 0px;
+}
+footer  nav ul li a {
+    color: var(--black);
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+footer  nav ul li a:hover {
+    color: var(--red);
+}
+footer  nav ul li div.share-button a {
+    display: flex;
+    padding: 13px 21px;
+    background-color: #313639;
+    /* width: 300px; */
+    transition: 0.3s ease;
+}
+footer  nav ul li div.share-button a:hover {
+    background-color: var(--red);
+}
+footer  nav ul li div.share-button a div.share-img {
+    width: 26px;
+    height: 26px;
+}
+footer  nav ul li div.share-button a div.share-img img {
+    width: 100%;
+    display: block;
+    filter: invert(1);
+}
+footer  nav ul li div.share-button a span {
+    font-size: 16px;
+    margin-left: 10px;
+    color: var(--white);
+}
+footer  nav ul li div.connect-container {
+    margin-top: 40px;
+}
+footer  nav ul li div.connect-container small {
+    font-size: 20px;
+    color: #959899;
+    font-weight: 700;
+}
+footer  nav ul li div.connect-container ul {
+    display: flex;
+    align-items: center;
+    /* height: 50px; */
+    flex-wrap: wrap;
+}
+footer  nav ul li div.connect-container ul li {
+    width: 50px;
+    /* width: 17%; */
+    height: 50px;
+    padding: 12.5px;
+    background-color: #313639;
+    margin: 0px 10px 16px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+footer  nav ul li div.connect-container ul li:last-child {
+    margin: 0px 0px 16px;
+}
+footer  nav ul li div.connect-container ul li.fb:hover {
+    background-color: #2753a7;
+}
+footer  nav ul li div.connect-container ul li.youtube:hover {
+    background-color: var(--red);
+}
+footer  div.connect-container ul li a div.social-img {
+    width: 25px;
+    height: 25px;
+}
+footer  nav ul li div.connect-container ul li a div.social-img img {
+    width: 100%;
+    display: block;
+    filter: invert(1);
+}
+
+footer div.bottom {
+    background-color: #191f22;
+    padding: 20px 0px;
+}
+footer div.bottom h6 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+}
+footer div.bottom div.select-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+    margin-top: 20px;
+    position: relative;
+}
+footer div.bottom div.select-container a {
+    display: flex;
+    padding: 0px 13px;
+    background-color: #313639;
+    margin-right: 12px;
+    height: 50px;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+footer div.bottom div.select-container a span {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+}
+footer div.bottom div.select-container a span.color {
+    color: #999;
+}
+footer div.bottom div.select-container a div.arrow {
+    rotate: 90deg;
+    width: 12px;
+    margin-right: 10px;
+}
+footer div.bottom div.select-container a div.rotate {
+    rotate: 0deg;
+    margin-right: 10px;
+}
+footer div.bottom div.select-container a div.arrow img {
+    width: 100%;
+    display: block;
+}
+footer div.bottom div.copyright {
+    border-top: 1px solid #494e51;
+}
+footer div.bottom div.copyright p {
+    color: var(--white);
+    margin: 30px 0px 50px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+footer div.bottom div.copyright p span {
+    text-decoration: underline;
+}
+footer div.bottom div.select-container div.popup {
+    width: 25%;
+    height: 209px;
+    background-color: var(--white);
+    position: absolute;
+    bottom: 50px;
+    overflow: auto;
+    border-top: 1px solid #aaa;
+    box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.15);
+    visibility: hidden;
+}
+footer div.bottom div.select-container div.active {
+    visibility: visible;
+}
+footer div.bottom div.select-container div.popup ul li a {
+    background-color: var(--white);
+    color: var(--black);
+    width: 100%;
+}
+/* footer-section-style-ended */
+
+
+/* Responsive  */
+
+@media screen and (max-width: 1280px) {
+    header div.header-container div.porsche-text {
+        width: 201px;
+    }
+    footer div.top nav ul li div.connect-container ul li {
+        width: 20%;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    header div.header-container div.porsche-text {
+        width: 195px;
+    }
+    section#models-container div.models div.item {
+        width: 50%;
+    }
+  
+  }
+  @media screen and (max-width: 1100px) {
+    header div.header-container div.porsche-text {
+        width: 185px;
+    }
+    footer div.top nav ul li div.connect-container ul li {
+        width: 23%;
+    }
+    footer div.bottom h6 {
+        font-size: 22px;
+    }
+  
+  }
+  @media screen and (max-width: 1024px) {
+    header div.header-container div.porsche-text {
+        width: 185px;
+    }
+    footer div.top nav {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        gap: 2px;
+    }
+    footer div.bottom div.select-container a {
+        height: 50px;
+        width: 48%;
+    }
+    footer div.bottom div.select-container div.popup {
+        width: 48%;
+    }
+    footer div.top nav ul li div.connect-container ul li {
+        width: 50px;
+        height: 50px;
+    }
+  }
+  @media screen and (max-width: 990px) {
+    header div.header-container div.porsche-text {
+        width: 180px;
+    }
+    section#near-you div.prev-arrow-near {
+        opacity: 0;
+    }
+    section#near-you div.prev-arrow-near i {
+        opacity: 0;
+    }
+    section#near-you div.next-arrow-near {
+        opacity: 0;
+    }
+    section#near-you div.next-arrow-near i {
+        opacity: 0;
+    }
+    section#discover div.discover-container div.item {
+        margin-bottom: 24px;
+    }
+    section#discover div.discover-container .slick-dots {
+        position: relative;
+        bottom: 0px;
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    section#discover div.discover-container .slick-dots button {
+        display: block;
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        border: none;
+        border-radius: 100%;
+        background: #c8cacb;
+        text-indent: -9999px;
+    }
+    section#discover div.discover-container .slick-dots li.slick-active button {
+        background-color: var(--red);
+    }
+    section#tools div.tools-container div.none {
+        display: none;
+    }
+    section#tools div.tools-container {
+        display: grid;
+        grid-template-columns: 2fr repeat(2, 1fr);
+    }
+    section#models-container div.models div.item div.img-container {
+        height: 552px;
+    }
+    section#models-container div.models div.item div.img-container img {
+        height: 100%;
+        object-fit: cover;
+    }
+  }
+  @media screen and (max-width: 950px) {
+    section#menu-container div.menu-nav div.left {
+        width: 305px;
+    }
+    section#menu-container div.menu-nav div.left ul {
+        width: 209px;
+    }
+    section#menu-container div.menu-nav div.right {
+        width: 305px;
+    }
+  }
+  @media screen and (max-width: 770px) {
+    section#menu-container div.menu-nav div.left {
+        width: 100%;
+        background-color: var(--white);
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        left: -100%;
+        transition: .4s ease;
+    }
+    section#menu-container div.menu-nav div.left-menu-active {
+        padding: 95px 0px 0px;
+        height: 100vh;
+        width: 100%;
+        background-color: var(--white);
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        visibility: visible;
+        opacity: 1;
+        left: 0;
+        z-index: 9999;
+  
+    }
+    section#menu-container div.menu-nav div.right div.arrow {
+        display: block;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        z-index: 99;
+    }
+    section#menu-container div.menu-nav div.right div.arrow img {
+        filter: invert(1);
+        rotate: -180deg;
+    }
+    section#menu-container div.menu-nav div.left ul {
+        width: 80%;
+    }
+    section#menu-container div.menu-nav div.right {
+        width: 100%;
+    }
+    section#menu-container div.menu-nav div.close {
+        width: 54px;
+        height: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid transparent;
+        position: absolute;
+        top:  20px;
+        left: 88%;
+        border-radius: 4px;
+        z-index: 99999;
+    }
+    section#menu-container div.menu-nav div.close img {
+        width: 24px;
+        height: 24px;
+        filter: invert(0);
+    }
+    section#spotlight div.slider-container div.text-content {
+        position: absolute;
+        bottom: 45px;
+        left: 18px;
+        display: flex;
+        align-items: flex-start;
+    }
+    section#spotlight div.slider-container div.text-content div.arrow {
+        width: 16px;
+        margin-top: 20px;
+        margin-right: 0px;
+    }
+    section#spotlight div.slider-container div.text-content h4 {
+        font-size: 32px;
+        color: var(--white);
+        font-weight: 700;
+        line-height: 54px;
+        transition: 0.3s ease;
+    }
+    section#spotlight div.slider-container div.text-content span {
+        font-size: 22px;
+        color: var(--white);
+        font-weight: 600;
+        line-height: 34px;
+        transition: 0.3s ease;
+    }
+    section#models-container div.models div.item div.img-container {
+        height: 425px;
+    }
+    section#models-container div.models div.item div.text-container {
+        display: none;
+    }
+    section#models-container div.models div.item div.button-conatiner {
+        display: none;
+    }
+    section#tools div.tools-container {
+        display: grid;
+        /* grid-template-columns: 493px repeat(3, 246px);
+        grid-template-rows: 278px; */
+        grid-template-columns: 2fr repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr;
+    }
+    section#tools div.tools-container div.item-img-1 {
+        grid-area: 1 / 1 / 2 / 4;
+    }
+    section#tools div.tools-container div.item-img-2 {
+        grid-area: 2 / 1 / 3 / 4;
+    }
+    section#tools div.tools-container div.item-img-3 {
+        grid-area: 2 / 2 / 3 / 4;
+  
+    }
+    section#models-container div.models div.item div.heading-res {
+        position: relative;
+        display: block;
+    }
+    section#models-container div.models div.item div.heading-res a {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 50px;
+        left: 30px;
+    }
+    section#models-container div.models div.item div.heading-res a div.arrow-red {
+        width: 15px;
+    }
+    section#models-container div.models div.item div.heading-res a div.arrow-red img {
+        width: 100%;
+        display: block;
+    }
+    section#models-container div.models div.item div.heading-res a span {
+        font-size: 22px;
+        font-weight: 700;
+        margin-left: 8px;
+        display: block;
+        color: var(--white);
+    }
+    header div.header-container div.porsche-text img {
+        display: none;
+    }
+    header div.header-container div.porsche-text img.logo {
+       width: 30px;
+       height: 40px;
+       display: block;
+       position: relative;
+       top: 50%;
+       transform: translate(0%, -50%);
+    }
+    section#social div.social-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 8px;
+        z-index: -1;
+    }
+    section#social div.social-container div.item-social-1 {
+        display: none;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    footer div.bottom div.select-container a {
+        height: 50px;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    footer div.bottom div.select-container div.popup {
+        width: 98%;
+        bottom: 132px;
+    }
+  }
+  @media screen and (max-width: 570px) {
+    header div.header-container div.porsche-text {
+        width: 0px;
+    }
+    section#spotlight div.slider-container div.text-content {
+        position: absolute;
+        bottom: 45px;
+        left: 18px;
+        display: flex;
+        align-items: flex-start;
+    }
+    section#spotlight div.slider-container div.slider-item div.img-container img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+    }
+    section#spotlight div.slider-container div.text-content div.arrow {
+        width: 16px;
+        margin-top: 20px;
+        margin-right: 0px;
+    }
+    section#spotlight div.slider-container div.text-content h4 {
+        font-size: 28px;
+        color: var(--white);
+        font-weight: 700;
+        line-height: 54px;
+        transition: 0.3s ease;
+    }
+    section#spotlight div.slider-container div.text-content span {
+        font-size: 20px;
+        color: var(--white);
+        font-weight: 600;
+        line-height: 34px;
+        transition: 0.3s ease;
+    }
+    section#social div.social-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 8px;
+        z-index: -1;
+    }
+    section#models-container div.models div.item div.img-container {
+        height: 313px;
+    }
+    section#social div.social-container div.item-social-2 {
+        display: none;
+    }
+    footer div.bottom div.select-container a {
+        height: 50px;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    footer div.bottom div.select-container div.popup {
+        width: 98.5%;
+    }
+    footer div.bottom div.copyright {
+        border-top: 0px solid #494e51;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    section#menu-container div.menu-nav div.close {
+        border: 2px solid transparent;
+        position: absolute;
+        left: 80%;
+    }
+    section#models-container div.models div.item {
+        width: 100%;
+    }
+    section#tools div.tools-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+    section#tools div.tools-container div.item-img-3 {
+        grid-area: 3 / 1 / 3 / 4;
+  
+    }
+  }
+  @media screen and (max-width: 360px) {
+    section#social div.social-container div.item-social-3 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    section#social div.social-container div.item-social-3 div.left-img {
+        display: none;
+    }
+    section#social div.social-container div.item-social-3 div.right-img {
+        grid-area: 2 / 1 / 3 / 3;
+    }
+  }
